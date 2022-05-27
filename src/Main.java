@@ -1,7 +1,4 @@
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
 import java.util.List;
 
 public class Main{
@@ -16,7 +13,7 @@ public class Main{
 
         //SE ALMACENAN 100 OBJETOS EN LA BASE DE DATOS
         EM.getTransaction().begin();
-        for (int i = 0; i < 100; i++){
+        for (int i = 1; i < 100; i++){
             Point p = new Point(i,i);
             EM.persist(p);
         }
@@ -30,12 +27,13 @@ public class Main{
 
         //Actualizar Objeto
         //Una vez recuperado de la BBD, podemos modificarlo en memoria
+        //Tambien podriamos actualizarlo con una query UPDATE
         EM.getTransaction().begin();
         p.x = p.x + 1;
-        //p.setNickname("New nickname");
         EM.getTransaction().commit();
 
         //Eliminar Objeto
+        //Elimino el objeto en memoria, es decir el que he recuperado
         EM.getTransaction().begin();
         EM.remove(p);
         EM.getTransaction().commit();
