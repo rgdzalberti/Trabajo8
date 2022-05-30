@@ -8,12 +8,15 @@ public class Point implements Serializable {
     //Con esto se declara una clave automáticamente
     @Id @GeneratedValue long id;
 
-    protected int x;
+    private int x;
     private int y;
 
-    public Point(){}
+    public Point(){
+        super();
+    }
 
-    Point (int x, int y) {
+    public Point (int x, int y) {
+        super();
         this.x = x;
         this.y = y;
     }
@@ -22,8 +25,8 @@ public class Point implements Serializable {
         return id;
     }
 
-    public int getX(){
-        return x;
+    public void setX(int x){
+        this.x = x;
     }
 
     @Override

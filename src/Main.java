@@ -20,21 +20,22 @@ public class Main{
         EM.getTransaction().commit();
 
         //Recuperar Objeto
-        //Le digo donde buscarlo y su clave primaria, en este caso el 1
+        //Le digo donde buscarlo y su clave identificatoria, en este caso el 1
         EM.getTransaction().begin();
         Point p = EM.find(Point.class, 1);
-        EM.getTransaction().commit();
+
 
         //Actualizar Objeto
-        //Una vez recuperado de la BBD, podemos modificarlo en memoria
-        //Tambien podriamos actualizarlo con una query UPDATE
-        EM.getTransaction().begin();
-        p.x = p.x + 1;
-        EM.getTransaction().commit();
+        //Una vez recuperado de la BBD, podemos modificarlo en memoria, en este caso lo haré de manera implicita como los demás ejemplos
+        System.out.print("Valor p antes de actualizarlo");
+        System.out.print(p);
+        p.setX(50);
+        System.out.print("Valor p después de actualizarlo");
+        System.out.print(p);
+
 
         //Eliminar Objeto
         //Elimino el objeto en memoria, es decir el que he recuperado
-        EM.getTransaction().begin();
         EM.remove(p);
         EM.getTransaction().commit();
 

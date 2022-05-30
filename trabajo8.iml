@@ -7,15 +7,15 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Java EE 6" level="project" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/objectdb-2.8.7/bin/objectdb.jar!/" />
+          <root url="jar://$USER_HOME$/Downloads/objectdb/objectdb-2.8.7/bin/objectdb.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="Java EE 6" level="project" />
   </component>
 </module>
