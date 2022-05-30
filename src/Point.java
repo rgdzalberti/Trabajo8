@@ -5,7 +5,7 @@ import javax.persistence.*;
 public class Point implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    //Con esto se declara una clave automáticamente
+    //Con esto se declara una clave automáticamente con el que le identificaré
     @Id @GeneratedValue long id;
 
     private int x;
